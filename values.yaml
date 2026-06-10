@@ -14,7 +14,6 @@ deployment:
 abcTest: '<+<+artifacts.primary.label>.get("maintainer")>'
 
   # Alternatively, the customer also tried quoting it:
-  # triggeredBy: "<+<+artifacts.primary.label>.get('com.regions.triggeredby')>"
 
 service:
   type: ClusterIP
