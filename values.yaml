@@ -11,6 +11,7 @@ image:
 deployment:
   # This is the expression the customer used — triggers the failure
   triggeredBy: <+<+artifacts.primary.label>.get('com.regions.triggeredby')>
+abcTest: '<+<+artifacts.primary.label>.get("maintainer")>'
 
   # Alternatively, the customer also tried quoting it:
   # triggeredBy: "<+<+artifacts.primary.label>.get('com.regions.triggeredby')>"
