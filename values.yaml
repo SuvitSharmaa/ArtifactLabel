@@ -1,0 +1,28 @@
+# values.yaml
+# This is the Helm values file where the customer was embedding the artifact label expression
+
+replicaCount: 1
+
+image:
+  repository: <+artifact.image>
+  tag: <+artifact.tag>
+  pullPolicy: Always
+
+deployment:
+  # This is the expression the customer used — triggers the failure
+  triggeredBy: <+<+artifacts.primary.label>.get('com.regions.triggeredby')>
+
+  # Alternatively, the customer also tried quoting it:
+  # triggeredBy: "<+<+artifacts.primary.label>.get('com.regions.triggeredby')>"
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
