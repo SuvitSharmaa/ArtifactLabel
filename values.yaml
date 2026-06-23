@@ -2,7 +2,7 @@
 # This is the Helm values file where the customer was embedding the artifact label expression
 
 replicaCount: 1
-
+appVersion: 1 
 image:
   repository: <+artifact.image>
   tag: <+artifact.tag>
