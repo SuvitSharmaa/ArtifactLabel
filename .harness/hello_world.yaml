@@ -1,0 +1,29 @@
+pipeline:
+  name: Hello World
+  identifier: Hello_World
+  description: Simple pipeline that echoes hello world
+  projectIdentifier: p1
+  orgIdentifier: default
+  tags:
+    ai_generated: ""
+  stages:
+    - stage:
+        name: Echo Stage
+        identifier: Echo_Stage
+        type: CI
+        spec:
+          cloneCodebase: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Echo Hello World
+                  identifier: Echo_Hello_World
+                  spec:
+                    command: echo "hello world"
