@@ -1,0 +1,30 @@
+pipeline:
+  name: RemotePipeline
+  identifier: RemotePipeline
+  projectIdentifier: KarpoInfra
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: EchoStage
+        identifier: EchoStage
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "hellp world"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
