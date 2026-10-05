@@ -12,7 +12,7 @@ metadata:
     app: stuck-readiness-repro
 spec:
   replicas: 1
-  progressDeadlineSeconds: 10  # tune this to control how fast it fails
+  progressDeadlineSeconds: 120  # tune this to control how fast it fails
   selector:
     matchLabels:
       app: stuck-readiness-repro
