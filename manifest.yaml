@@ -12,7 +12,7 @@ metadata:
     app: stuck-readiness-repro
 spec:
   replicas: 1
-  progressDeadlineSeconds: 120  # tune this to control how fast it fails
+  progressDeadlineSeconds: 180  # tune this to control how fast it fails
   selector:
     matchLabels:
       app: stuck-readiness-repro
@@ -37,6 +37,6 @@ spec:
             exec:
               # always exits non-zero, so the pod is Running but never Ready
               command: ["sh", "-c", "exit 1"]
-            initialDelaySeconds: 2
+            initialDelaySeconds: 20
             periodSeconds: 5
             failureThreshold: 1
