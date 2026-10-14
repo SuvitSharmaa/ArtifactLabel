@@ -1,0 +1,22 @@
+inputSet:
+  name: ipToBeDeleted
+  identifier: ipToBeDeleted
+  orgIdentifier: default
+  projectIdentifier: p1
+  pipeline:
+    identifier: PipelineWtrigger_restore
+    stages:
+      - stage:
+          identifier: customprtrigger
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: ShellScript_1
+                    type: ShellScript
+                    spec:
+                      source:
+                        type: Inline
+                        spec:
+                          script: echo "saved on main branch"
