@@ -26,4 +26,5 @@ pipeline:
                   name: Echo Hello World
                   identifier: Echo_Hello_World
                   spec:
-                    command: echo "hello world"
+                    shell: Sh
+                    command: echo "hello world, restored form audit trail"
